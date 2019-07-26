@@ -30,8 +30,15 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 1. What is the purpose of using _sessions_?
 1. What does bcrypt do to help us store passwords in a secure manner.
+
+-> It hashes the password using the saklt number provided.
+
 1. What does bcrypt do to slow down attackers?
+
+--> using the salt, it generates random bytes and combines it with the password and hashes it, this makes it hard for hackers to perfom rainbow attacks on the password saved in the database.
 1. What are the three parts of the JSON Web Token?
+
+--> payload, secret, option
 
 ## Project Set Up
 
