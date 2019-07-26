@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-require('dotenv').config()
+require('dotenv').config();
 
 const jwtKey =
   process.env.JWT_SECRET ||
@@ -9,7 +9,19 @@ const jwtKey =
 // quickly see what this file exports
 module.exports = {
   authenticate,
+  generateToken
 };
+
+function generateToken(user) {
+  const payload = {
+    id: user.id,
+    username: user.username
+  };
+  const options = {
+    expiresIn: '1d'
+  };
+  return jwt.sign(payload, jwtKey, options);
+}
 
 // implementation details
 function authenticate(req, res, next) {
@@ -25,7 +37,7 @@ function authenticate(req, res, next) {
     });
   } else {
     return res.status(401).json({
-      error: 'No token provided, must be set on the Authorization Header',
+      error: 'No token provided, must be set on the Authorization Header'
     });
   }
 }
