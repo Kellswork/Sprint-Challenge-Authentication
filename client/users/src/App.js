@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import SignupForm from './Users/SignupForm';
 import LoginForm from './Users/LoginForm';
+import Navigation from './Navigation/Navigation';
 
 class App extends Component {
   state = {
@@ -62,6 +63,7 @@ class App extends Component {
     console.log(this.state.dadJokes);
     return (
       <div>
+        <Navigation />
         <Route
           path="/signup"
           render={() => (
