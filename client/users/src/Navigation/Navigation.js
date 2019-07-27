@@ -5,7 +5,12 @@ import styled from 'styled-components';
 const Div = styled.div`
 a {
     padding: 20px;
+    color: #1e114ad4;
+    text-decoration: none;
 }
+.active {
+        color: #690480d4;
+    }
 `;
 
 const Navigation = () => {
